@@ -1,0 +1,15 @@
+.a-box {
+    background: hsl(165, 58%, 29%);
+    color : blue;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}
+
+.pwbox {
+    background: hsl(165, 58%, 29%);
+    color : blue;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css"
+</head>
+<body>
+
+    <div class="a-box" id="aaa">
+        <p id="title">ㅇㅅㅇ</p>
+        <button id="close">닫기</button>
+    </div>
+
+    <button onclick="idbox('노아이디')">버튼1</button>
+    <button onclick="idbox('노비번')">버튼2</button>
+
+    <script>
+
+        function idbox(iii){
+            document.getElementById('title').innerHTML =  iii;
+            document.getElementById('aaa').style.display = 'block';
+        }
+
+        document.getElementById('close').addEventListener('click', function(){
+
+            document.getElementById('aaa').style.display = 'none';
+
+
+        });
+
+
+    </script>
+
+</body>
+</html>
