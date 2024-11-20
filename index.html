@@ -1,36 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
-    <link rel="stylesheet" href="main.css"
+    
+    <title>내신산출기</title>
+    <script>
+        // 내신 출력 함수
+        function addOneToScore() {
+            // 입력값 가져오기
+            var koscore = parseInt(document.getElementById('korean').value);
+            var mascore = parseInt(document.getElementById('math').value);
+            var enscore = parseInt(document.getElementById('english').value);
+            var scscore = parseInt(document.getElementById('science').value);
+            var soscore = parseInt(document.getElementById('society').value);
+            var hiscore = parseInt(document.getElementById('history').value);
+            var juscore = parseInt(document.getElementById('jungbo').value);
+
+            // 체크
+            if (isNaN(koscore) || isNaN(mascore) || isNaN(enscore) || isNaN(scscore) || isNaN(soscore) || isNaN(hiscore) || isNaN(juscore)) {
+                alert("빈칸없게하세용");
+                return;
+            }
+            
+            var naeshin = (koscore * 4 + mascore * 4 + enscore * 4 + scscore * 3 + soscore * 3 + hiscore * 3 + juscore * 3) / 24;
+
+            // 출력
+            document.getElementById('result').innerText = '내신: ' + naeshin.toFixed(2);
+        }
+    </script>
 </head>
 <body>
-
-    <div class="a-box" id="aaa">
-        <p id="title">ㅇㅅㅇ</p>
-        <button id="close">닫기</button>
-    </div>
-
-    <button onclick="idbox('노아이디')">버튼1</button>
-    <button onclick="idbox('노비번')">버튼2</button>
-
-    <script>
-
-        function idbox(iii){
-            document.getElementById('title').innerHTML =  iii;
-            document.getElementById('aaa').style.display = 'block';
-        }
-
-        document.getElementById('close').addEventListener('click', function(){
-
-            document.getElementById('aaa').style.display = 'none';
-
-
-        });
-
-
-    </script>
-
+    <h1>내신산출기</h1>
+    
+    <label for="korean">국어:</label>
+    <input type="text" id="korean" placeholder="등급을 입력하세요"><br>
+    <label for="math">수학:</label>
+    <input type="text" id="math" placeholder="등급을 입력하세요"><br>
+    <label for="english">영어:</label>
+    <input type="text" id="english" placeholder="등급을 입력하세요"><br>
+    <label for="science">통합과학:</label>
+    <input type="text" id="science" placeholder="등급을 입력하세요"><br>
+    <label for="society">통합사회:</label>
+    <input type="text" id="society" placeholder="등급을 입력하세요"><br>
+    <label for="history">한국사:</label>
+    <input type="text" id="history" placeholder="등급을 입력하세요"><br>
+    <label for="jungbo">정보/한문:</label>
+    <input type="text" id="jungbo" placeholder="등급을 입력하세요"><br>
+    
+    <button onclick="addOneToScore()">점수 계산</button>
+    
+    <p id="result"></p>
 </body>
 </html>
